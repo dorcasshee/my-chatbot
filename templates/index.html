@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <div class="chat">
+        <!-- Header -->
+        <div class="chat-header">
+            <h1>My Chatbot</h1>
+        </div>
+
+        <!-- Chat history for current session -->
+        <div class="chat-history" id="chat-history">
+            <div class="chatbot-message">
+                <div class="message-content">
+                    <strong>My Chatbot:</strong> Hello! How can I help you today?
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading indicator (when chatbot is typing; hidden by default) -->
+        <div class="loader" id="loader" style="display: none;">
+            <span>My Chatbot is typing</span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Error Message Area (hidden by default) -->
+        <div class="error-message" id="error-message" style="display: none;">
+        </div>
+
+        <!-- User input area -->
+        <div class="chat-input">
+            <form id="chat-form">
+                <div class="input">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="Type your message here..." 
+                        maxlength="500"
+                        autocomplete="off">
+                    <button type="submit" id="send-button">Send</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Javascript to handle form submission and retention of chat history -->
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+</body>
+</html>
