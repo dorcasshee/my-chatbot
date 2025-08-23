@@ -1,0 +1,45 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    background: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: min(100% - 3rem, 600px);
+    margin-inline: auto;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: black;
+}
+
+.header {
+    color: #1434cb;
+    padding: 2rem;
+}
+
+.welcome-screen {
+    text-align: center;
+    height: 10rem;
+}
+
+.chat-form {
+    width: inherit;
+    display: flex;
+}
+
+#send-button {
+    background: #1434cb;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer; 
+}
+
+#send-button:hover {
+    background: #173be8;
+}

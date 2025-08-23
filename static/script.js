@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('chat-form')
     const userInput = document.getElementById('user-input')
+    const welcomeScreen = document.getElementById('welcome-screen')
     const chatHistory = document.getElementById('chat-history')
-    const loading = document.getElementById('loader')
+    const loader = document.getElementById('loader')
     const errorDiv = document.getElementById('error-message')
 
     const SENDER_CONFIG = {
@@ -16,11 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    let isFirstMessage = true;
+
     form.addEventListener('submit', async function(event) {
         event.preventDefault(); // don't reload page
 
         const message = userInput.value.trim();
         if (!message) return; // do not send empty messages
+
+        if (isFirstMessage) {
+            hideWelcomeScreen();
+            showChatHistory();
+            isFirstMessage = false;
+        }
 
         addMessage(message, 'user'); // add user message to current session history
 
@@ -64,6 +73,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         chatHistory.appendChild(messageDiv);
         scrollToBottom();
+    }
+
+    function hideWelcomeScreen() {
+        welcomeScreen.style.display = 'none';
+    }
+
+    function showChatHistory() {
+        chatHistory.style.display = 'flex';
     }
 
     function showLoading() {

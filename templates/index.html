@@ -11,17 +11,36 @@
 <body>
     <div class="chat">
         <!-- Header -->
-        <div class="chat-header">
+        <div class="header">
             <h1>My Chatbot</h1>
         </div>
 
-        <!-- Chat history for current session -->
-        <div class="chat-history" id="chat-history">
-            <div class="chatbot-message">
-                <div class="message-content">
-                    <strong>My Chatbot:</strong> Hello! How can I help you today?
+        <!-- Welcome Screen (shown initially) -->
+        <div class="welcome-screen" id="welcome-screen">
+            <div class="welcome-content">
+                <div class="welcome-icon">
+                    <div class="icon-symbol">icon</div>
+                </div>
+                <h2 class="welcome-title">Ask me something!</h2>
+                <p class="welcome-subtitle">I'm here to help with your questions. Start a conversation below.</p>
+                
+                <!-- Optional: Sample prompts -->
+                <div class="sample-prompts">
+                    <div class="prompt-item" onclick="fillInput('Hello!')">
+                        <span class="prompt-text">👋 Say hello</span>
+                    </div>
+                    <div class="prompt-item" onclick="fillInput('How are you?')">
+                        <span class="prompt-text">💭 Ask how I am</span>
+                    </div>
+                    <div class="prompt-item" onclick="fillInput('Tell me a joke')">
+                        <span class="prompt-text">😄 Tell me a joke</span>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Chat history for current session -->
+        <div class="chat-history" id="chat-history" style="display: none;">
         </div>
 
         <!-- Loading indicator (when chatbot is typing; hidden by default) -->
@@ -48,7 +67,7 @@
                         placeholder="Type your message here..." 
                         maxlength="500"
                         autocomplete="off">
-                    <button type="submit" id="send-button">Send</button>
+                    <button type="submit" id="send-button"></button>
                 </div>
             </form>
         </div>
