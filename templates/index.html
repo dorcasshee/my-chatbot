@@ -9,32 +9,25 @@
 </head>
 
 <body>
-    <div class="chat">
-        <!-- Header -->
-        <div class="header">
+    <div class="header-container">
+        <header>
             <h1>My Chatbot</h1>
-        </div>
+            <div class="line"></div>
+        </header>
+    </div>
 
+    <article>
         <!-- Welcome Screen (shown initially) -->
         <div class="welcome-screen" id="welcome-screen">
             <div class="welcome-content">
-                <div class="welcome-icon">
-                    <div class="icon-symbol">icon</div>
-                </div>
+                <div class="icon">✨</div>
                 <h2 class="welcome-title">Ask me something!</h2>
-                <p class="welcome-subtitle">I'm here to help with your questions. Start a conversation below.</p>
+                <p class="welcome-subtitle">Start a conversation below:</p>
                 
-                <!-- Optional: Sample prompts -->
-                <div class="sample-prompts">
-                    <div class="prompt-item" onclick="fillInput('Hello!')">
-                        <span class="prompt-text">👋 Say hello</span>
-                    </div>
-                    <div class="prompt-item" onclick="fillInput('How are you?')">
-                        <span class="prompt-text">💭 Ask how I am</span>
-                    </div>
-                    <div class="prompt-item" onclick="fillInput('Tell me a joke')">
-                        <span class="prompt-text">😄 Tell me a joke</span>
-                    </div>
+                <div class="prompt-grid">
+                    <button class="prompt-btn">👋 Say hello</button>
+                    <button class="prompt-btn">💭 Tell me a fun fact</button>
+                    <button class="prompt-btn">😄 Tell me a joke</button>
                 </div>
             </div>
         </div>
@@ -56,24 +49,30 @@
         <!-- Error Message Area (hidden by default) -->
         <div class="error-message" id="error-message" style="display: none;">
         </div>
+    </article>
 
-        <!-- User input area -->
-        <div class="chat-input">
-            <form id="chat-form">
-                <div class="input">
+    <div class="footer-container">
+        <div class="line"></div>
+        <footer>
+            <div class="chat-input">
+                <form id="chat-form">
                     <input 
                         type="text" 
                         id="user-input" 
                         placeholder="Type your message here..." 
                         maxlength="500"
                         autocomplete="off">
-                    <button type="submit" id="send-button"></button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Javascript to handle form submission and retention of chat history -->
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
+                    <button type="submit" id="send-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 3l18 9-18 9V3z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </footer>
     </div>
+
+    <!-- Javascript to handle form submission and retention of chat history -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

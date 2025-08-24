@@ -9,6 +9,6 @@ class MyChatbot:
         for keyword in user_greetings:
             if keyword in user_msg.lower():
                 greeting = random.choice(chatbot_greetings)
-                return f"{greeting} {introduction}"
+                return f"{greeting}\n{introduction}"
 
-        return "I do not understand your question. Could you try another query?"
+        return "I'm sorry, I do not understand that. Could you try again?"

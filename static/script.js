@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showChatHistory() {
         chatHistory.style.display = 'flex';
+        chatHistory.style.flexDirection = 'column';
     }
 
     function showLoading() {
