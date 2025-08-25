@@ -7,7 +7,7 @@ class MyChatbot:
     who_keywords = ['who are you', 'hu r u', 'who r u', 'hu u', ' who u', 'what r u', 'what are you']
     introduction = "I am My Chatbot! I am a chatbot that can help you with basic questions, tell jokes, and share interesting facts. What would you like to chat about?"
     
-    capability_keywords = ['what can you do', 'what can u do', 'what do you do', 'what do u do', 'capabilities', 'functions', 'what can i ask']
+    capability_keywords = ['what can you do', 'what can u do', 'what do you do', 'what do u do', 'capabilities', 'functions', 'what can i ask', 'what else can you do']
     capabilities = """I can chat with you! Try asking me to:
     - Say hello  
     - Tell you a joke
@@ -40,8 +40,7 @@ class MyChatbot:
         "Did you know? Kenya’s M-Pesa mobile money system handles more transactions than most of the country’s banks combined."
     ]
     
-    company_info = """
-    Visa Inc. is a global payments technology company.
+    company_info = """Visa Inc. is a global payments technology company.
     
     They do not issue credit or debit cards directly. Instead, they provide the secure payment network (VisaNet) that banks, fintechs, and merchants use to process transactions worldwide.
     
@@ -60,7 +59,7 @@ class MyChatbot:
         if any(keyword in question for keyword in self.goodbye_words):
             return random.choice(self.goodbye_responses)
         
-        if 'joke' in question:
+        if 'joke' in question or 'funny' in question:
             return random.choice(self.jokes)
         
         if 'fun fact' in question or 'fact' in question or 'interesting' in question:

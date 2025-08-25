@@ -20,6 +20,7 @@ body {
     align-items: center;
     background: white;
     border-radius: 16px;
+    /* box-shadow: rgba(27, 31, 35, 0.1) 0 1px 8px, rgba(255, 255, 255, 0.25) 0 1px 0 inset; */
     box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
 }
 
@@ -41,8 +42,8 @@ header {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 1vh;
-    right: 1vh;
+    left: 2vh;
+    right: 2vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -63,43 +64,33 @@ article {
 
 .welcome-screen {
     text-align: center;
-    height: auto;
+    margin: auto;
 }
 
-.sparkles-icon {
-    font-size: 5rem;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 1rem;
-}
-
-.prompt-row {
-    display: flex;
+.prompt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     padding: 10px;
-    width: auto;
     justify-content: center;
     align-items: center;
 }
 
 .prompt-btn {
+    background: rgba(204, 227, 253, 0.5);
     color: black;
     font-family: inherit;
     font-size: 1rem;
-    width: 160px;
-    height: 4rem;
-    padding: 8px;
+    height: 3rem;
+    padding: 12px;
     cursor: pointer;
-    border: 1px solid rgba(27, 31, 35, 0.15);
+    border: 1px solid rgba(27, 31, 35, 0.1);
     border-radius: 16px;
-    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
-    justify-content: center;
-    align-items: center;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 8px, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
 }
 
 .prompt-btn:hover {
-    background-color: #F7F8F9;
+    background-color: #FAFBFC;
     text-decoration: none;
     transition-duration: 0.1s;
 }
@@ -108,6 +99,12 @@ article {
   background-color: #EDEFF2;
   box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
   transition: none 0s;
+}
+
+@media (max-width: 600px) {
+    .prompt-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 .chat-history {
@@ -150,6 +147,50 @@ article {
     padding: 12px 16px;
     border-radius: 16px;
     box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0;
+}
+
+.loader {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+
+#loader .message-content {
+    color: rgb(47, 48, 49);
+    border: 1px solid rgba(27, 31, 35, 0.15);
+}
+
+.dots {
+    display: inline-block;
+    margin-left: 6px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1434cb;
+    margin: 0 2px;
+    animation: bounce 1.4s infinite;
+}
+
+.dots span:nth-child(2) { 
+    animation-delay: 0.2s; 
+}
+
+.dots span:nth-child(3) { 
+    animation-delay: 0.4s; 
+}
+
+@keyframes bounce {
+    0%, 60%, 100% { 
+        transform: translateY(0); 
+    }
+    30% { 
+        transform: translateY(-10px); 
+    }
 }
 
 .footer-container {
@@ -245,16 +286,9 @@ textarea:hover {
 }
 
 #send-button:hover {
-  background-color: #F7F8F9;
+  background-color: rgba(204, 227, 253, 0.5);
   text-decoration: none;
   transition-duration: 0.1s;
-}
-
-#send-button:disabled {
-  background-color: #FAFBFC;
-  border-color: rgba(27, 31, 35, 0.15);
-  color: #959DA5;
-  cursor: default;
 }
 
 #send-button:active {

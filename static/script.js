@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
         showLoading();
         hideError();
 
+        const randomDelay = Math.random() * (1500 - 800) + 800;
+        await new Promise(resolve => setTimeout(resolve, randomDelay));
+
         try {
             const response = await fetch ('/chat', {
                 method: 'POST',
@@ -122,11 +125,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showLoading() {
-        loader.style.display = 'block';
+        const loadingDiv = document.createElement('div')
+        loadingDiv.className = 'chatbot-message';
+        loadingDiv.id = 'loader';
+        loadingDiv.innerHTML = `
+            <div class="message-content">
+                <em>My Chatbot is typing</em>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        `;
+
+        chatHistory.appendChild(loadingDiv);
+        scrollToBottom();
     }
     
     function hideLoading() {
-        loader.style.display = 'none';
+        const loader = document.getElementById('loader');
+
+        if (loader) {
+            loader.remove();
+        }
     }
     
     function showError(errorMessage) {
