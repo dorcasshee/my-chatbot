@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.prompt-btn').forEach(button => {
         button.addEventListener('click', function() {
-            const text = this.textContent.trim().replace(/^[^\s]+\s/, '');
-            userInput.value = text;
+            const text = this.textContent.trim();
+            userInput.value = text == 'Say hello' ? 'Hello!' : text;
             form.dispatchEvent(new Event('submit'));
         });
     });

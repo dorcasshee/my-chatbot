@@ -9,47 +9,45 @@
 </head>
 
 <body>
-    <div class="header-container">
-        <header>
-            <h1>My Chatbot</h1>
-        </header>
-        <div class="line"></div>
-    </div>
-
-    <article>
-        <!-- Welcome Screen (shown initially) -->
-        <div class="welcome-screen" id="welcome-screen">
-            <div class="welcome-content">
-                <div class="icon">✨</div>
-                <h2 class="welcome-title">Ask me something!</h2>
-                <p class="welcome-subtitle">Start a conversation below:</p>
-                
-                <div class="prompts">
-                    <button class="prompt-btn">👋 Say hello</button>
-                    <button class="prompt-btn">💭 Tell me a fun fact</button>
-                    <button class="prompt-btn">😄 Tell me a joke</button>
+        <div class="header-container">
+            <header>
+                <h1>My Chatbot</h1>
+            </header>
+            <div class="line"></div>
+        </div>
+    
+    <div class="main-container">
+        <article>
+            <div class="welcome-screen" id="welcome-screen">
+                <div class="welcome-content">
+                    <div class="icon">✨</div>
+                    <h2 class="welcome-title">Ask me something!</h2>
+                    <p class="welcome-subtitle">Start a conversation below:</p>
+                    
+                    <div class="prompt-row">
+                        <button class="prompt-btn">Say hello</button>
+                        <button class="prompt-btn">Tell me a fun fact</button>
+                        <button class="prompt-btn">Tell me a joke</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Chat history for current session -->
-        <div class="chat-history" id="chat-history" style="display: none;">
-        </div>
-
-        <!-- Loading indicator (when chatbot is typing; hidden by default) -->
-        <div class="loader" id="loader" style="display: none;">
-            <span>My Chatbot is typing</span>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="chat-history" id="chat-history" style="display: none;">
             </div>
-        </div>
 
-        <!-- Error Message Area (hidden by default) -->
-        <div class="error-message" id="error-message" style="display: none;">
-        </div>
-    </article>
+            <div class="loader" id="loader" style="display: none;">
+                <span>My Chatbot is typing</span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="error-message" id="error-message" style="display: none;">
+            </div>
+        </article>
+    </div>
 
     <div class="footer-container">
         <div class="line"></div>
