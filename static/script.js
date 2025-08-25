@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     userInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter' && !event.shiftKey) {
-            event.preventDefault(); // prevent new line
-            form.dispatchEvent(new Event('submit')); // submit form
+            event.preventDefault();
+            form.dispatchEvent(new Event('submit'));
         }
         setTimeout(autoResize, 0);
     });
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(autoResize, 0);
 
         const message = userInput.value.trim();
-        if (!message) return; // do not send empty messages
+        if (!message) return;
 
         if (isFirstMessage) {
             hideWelcomeScreen();
@@ -51,9 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
             isFirstMessage = false;
         }
 
-        addMessage(message, 'user'); // add user message to current session history
+        addMessage(message, 'user');
 
-        // clear user input from text box and show loader
         userInput.value = '';
         showLoading();
         hideError();
@@ -68,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
 
             if (response.ok) {
-                addMessage(data.response, 'chatbot'); // successful response; chatbot response
+                addMessage(data.response, 'chatbot');
             } else {
                 showError(data.error);
             }
@@ -79,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // helper functions
     function autoResize() {
         userInput.style.height = 'auto';
         userInput.style.overflow = 'hidden';
@@ -106,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.className = config.className;
         messageDiv.innerHTML = `
             <div class="message-content">
-                <strong>${config.username}:</strong> ${message}
+                <strong>${config.username}:</strong><br>${message.replace(/\n/g, '<br>')}
             </div>
         `;
 
