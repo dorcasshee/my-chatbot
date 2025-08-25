@@ -19,23 +19,23 @@ body {
     max-width: calc(100% - 2vh);
     box-sizing: border-box;
     background: white;
+    border-radius: 16px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+}
+
+h1 {
+    margin: 1rem;
 }
 
 header {
     color: #1434cb;
-    text-align: left;
-    padding: 1vh;
+    text-align: center;
+    padding: 2vh;
     box-sizing: border-box;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
-
-/* .line {
-    border-bottom: 1px solid black;
-    opacity: 0.1;
-    width: 100%;
-} */
 
 article {
     width: auto;
@@ -51,6 +51,8 @@ article {
     box-sizing: border-box;
     justify-content: center;
     background: white;
+    border-radius: 16px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
 }
 
 footer {
@@ -74,39 +76,95 @@ footer {
     padding: 0;
 }
 
-input {
+textarea {
+    appearance: none;
+    background: white;
+    color: black;
     font-family: inherit;
     font-size: inherit;
-    color: black;
-    max-width: 100%;
     width: 80vw;
-    margin: 0;
-    padding: 8px;
-    border: 1px solid #E5E5E5;
+    max-width: 100%;
+    min-height: 40px;
+    max-height: 150px;
+    resize: none;
+    padding: 12px 16px; 
+    border: 1px solid rgba(27, 31, 35, 0.15);
     border-radius: 16px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
     box-sizing: border-box;
     flex: 1;
+    scrollbar-color: rgb(186, 186, 186) #F9FAFB;
+    scrollbar-width: thin;
+}
+
+textarea:focus {
+    background-color: #F9FAFB;
+    outline: 1px solid rgba(27, 31, 35, 0.15);
+    outline-offset: -1px;
+}
+
+textarea:hover {
+    background-color: #F9FAFB;
 }
 
 #send-button {
-    width: 40px;
-    height: 40px;
-    background: white;
-    border: 1px solid #E5E5E5;
-    border-radius: 14px;
-    background: #FDB515;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 16px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E; /* check Colors */
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  height: 44px;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
 }
 
 #send-button:hover {
-    background: #fcc015;
+  background-color: #F7F8F9;
+  text-decoration: none;
+  transition-duration: 0.1s;
 }
 
-#send-button svg {
-    color: #1434cb;
+#send-button:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
 }
+
+#send-button:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+#send-button:focus {
+  outline: 1px transparent;
+}
+
+#send-button:before {
+  display: none;
+}
+
+#send-button:-webkit-details-marker {
+  display: none;
+}
+
 
 /* ignore this section onwards for now. */
 .welcome-screen {

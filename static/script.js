@@ -19,8 +19,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let isFirstMessage = true;
 
+    userInput.addEventListener('input', autoResize);
+
+    userInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault(); // prevent new line
+            form.dispatchEvent(new Event('submit')); // submit form
+        }
+        setTimeout(autoResize, 0);
+    });
+
     form.addEventListener('submit', async function(event) {
         event.preventDefault(); // don't reload page
+
+        setTimeout(autoResize, 0);
 
         const message = userInput.value.trim();
         if (!message) return; // do not send empty messages
@@ -60,6 +72,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Helper functions
+    function autoResize() {
+        userInput.style.height = 'auto';
+        userInput.style.overflow = 'hidden';
+
+        const scrollHeight = userInput.scrollHeight;
+        const minHeight = 40;
+        const maxHeight = 150;
+
+        if (scrollHeight <= maxHeight) {
+            const newHeight = scrollHeight < minHeight ? minHeight : scrollHeight;
+            
+            userInput.style.height = newHeight + 'px';
+            userInput.style.overflow = 'hidden';
+        } else {
+            userInput.style.height = maxHeight + 'px';
+            userInput.style.overflow = 'auto';
+        }
+    }
+
     function addMessage(message, senderType) {
         const messageDiv = document.createElement('div');
         const config = SENDER_CONFIG[senderType];
@@ -104,4 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function scrollToBottom() {
         chatHistory.scrollTop = chatHistory.scrollHeight;
     }
+
+    autoResize();
 })
