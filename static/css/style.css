@@ -184,7 +184,7 @@ textarea:hover {
     box-shadow: 0 0 10px rgba(74, 144, 226, 0.4);
 }
 
-.prompt-grid {
+.prompts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;

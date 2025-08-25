@@ -19,6 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let isFirstMessage = true;
 
+    document.querySelectorAll('.prompt-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const text = this.textContent.trim().replace(/^[^\s]+\s/, '');
+            userInput.value = text;
+            form.dispatchEvent(new Event('submit'));
+        });
+    });
+
     userInput.addEventListener('input', autoResize);
 
     userInput.addEventListener('keydown', function(event) {
@@ -71,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Helper functions
+    // helper functions
     function autoResize() {
         userInput.style.height = 'auto';
         userInput.style.overflow = 'hidden';
@@ -82,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (scrollHeight <= maxHeight) {
             const newHeight = scrollHeight < minHeight ? minHeight : scrollHeight;
-            
+
             userInput.style.height = newHeight + 'px';
             userInput.style.overflow = 'hidden';
         } else {
