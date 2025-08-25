@@ -74,6 +74,7 @@ Please ensure these requirements are met before moving to **Installation and Set
    ```bash
    source venv/bin/activate
    ```
+   If activation is successful, your terminal prompt will reflect `(venv)`.
 
 4. **Install dependencies**
    ```bash
