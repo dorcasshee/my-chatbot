@@ -7,7 +7,7 @@ class MyChatbot:
     who_keywords = ['who are you', 'hu r u', 'who r u', 'hu u', ' who u', 'what r u', 'what are you']
     introduction = "I am My Chatbot! I am a chatbot that can help you with basic questions, tell jokes, and share interesting facts. What would you like to chat about?"
     
-    capability_keywords = ['what can you do', 'what can u do', 'what do you do', 'what do u do', 'capabilities', 'functions', 'what can i ask', 'what else can you do']
+    capability_keywords = ['what can you do', 'what can u do', 'what you can do', 'what u can do', 'what do you do', 'what do u do', 'capabilities', 'functions', 'what can i ask', 'what else can you do']
     capabilities = """I can chat with you! Try asking me to:
     - Say hello  
     - Tell you a joke
