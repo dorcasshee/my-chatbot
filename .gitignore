@@ -4,3 +4,4 @@ venv/
 # Others
 .idea/
 __pycache__/
+.vscode/
