@@ -1,6 +1,8 @@
 # My Chatbot
-This is a simple end-to-end chatbot application built with Flask and vanilla JavaScript. This project demonstrates basic conversational AI functionality without using external AI APIs.
-
+This is a simple end-to-end chatbot application built with Flask and vanilla JavaScript. This project demonstrates basic conversational AI functionality without using external AI APIs.  
+  
+You can access it at **[https://my-chatbot-0lpm.onrender.com/](https://my-chatbot-0lpm.onrender.com/)**.
+  
 ![alt text](/img/my_chatbot.png)
 
 ## Features
@@ -20,8 +22,8 @@ This is a simple end-to-end chatbot application built with Flask and vanilla Jav
 
 ## Tech Stack
 **Backend:**
-- Python 3.13.17
-- Flask - web framework and sessions
+- Python 3.13.7
+- Flask's web framework and `sessions`
 
 **Frontend:**
 - HTML5
