@@ -10,14 +10,14 @@ You can access it at **[https://my-chatbot-0lpm.onrender.com/](https://my-chatbo
 - Real-time chat with mock responses instead of AI responses
 - Interactive prompt buttons for quick conversation starters
 - Session-based conversation history
-- Input validation and error handling
+- Basic input validation and error handling (max char limit of 500)
 
 ## Project Structure
 - `app.py` - main Flask app
 - `chatbot.py` - Chatbot logic
 - `requirements.txt` - Python dependencies for this project
-- `/static/script.js` - Frontend JavaScript
 - `/templates/index.html` - Main HTML template
+- `/static/script.js` - Frontend JavaScript
 - `/static/css/style.css` - CSS stylesheet
 
 ## Tech Stack
@@ -36,6 +36,7 @@ You can access it at **[https://my-chatbot-0lpm.onrender.com/](https://my-chatbo
 - A code editor like Visual Studio Code, PyCharm, etc
 - `virtualenv`
   - If you do not have `virtualenv` installed, you can install it using `pip install virtualenv` on your terminal
+  - You can check if you have `virtualenv` installed by running `virtualenv --version` on your terminal
 
 Please ensure these requirements are met before moving to **Installation and Setup**.
 
@@ -51,15 +52,16 @@ Please ensure these requirements are met before moving to **Installation and Set
    ```bash
    virtualenv venv
    ```
+   If `venv` is succesfully created, you should see the `venv/` folder in your project directory.
 
 3. **Activate virtual environment**  
    *Windows Command Prompt:*
    ```bash
-   .venv\Scripts\activate
+   venv/Scripts/activate
    ```
    *MacOS/Linux/Windows Git Bash Terminal:*
    ```bash
-   source .venv/bin/activate
+   source venv/bin/activate
    ```
    If activation is successful, your terminal prompt will reflect `(venv)` or `(.venv)`.
 
@@ -92,7 +94,6 @@ Please ensure these requirements are met before moving to **Installation and Set
    - General capabilities inquiry ("What can you do?")
 
 ## API Endpoints
-
 - `GET /` - Serves the main chat interface
 - `POST /chat` - Processes chat messages and returns responses
 
@@ -100,10 +101,3 @@ Please ensure these requirements are met before moving to **Installation and Set
 - Built as a prototype demonstrating full-stack development skills
 - Uses mock responses instead of real AI services
 - Designed for rapid deployment and testing
-
-## Browser Compatibility
-- Modern browsers with ES6+ support
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
