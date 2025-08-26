@@ -1,7 +1,9 @@
-def validate(question: str | None) -> list[str]:
+from typing import Optional
+
+def validate(question: Optional[str]) -> list[str]:
     errors = []
 
-    if question is None: # question key does not exist in JSON response
+    if question is None:
         errors.append('Please provide a question.')
         return errors
     
@@ -11,10 +13,10 @@ def validate(question: str | None) -> list[str]:
     
     clean_question = question.strip()
     
-    if clean_question == "": # user sends an empty message
+    if clean_question == "":
         errors.append('Please enter a message.')
     
-    if len(clean_question) > 500: # check character count
+    if len(clean_question) > 500:
         errors.append('Your message is too long. Max character count: 500.')
 
     return errors

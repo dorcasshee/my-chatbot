@@ -1,48 +1,33 @@
 # My Chatbot
-
 This is a simple end-to-end chatbot application built with Flask and vanilla JavaScript. This project demonstrates basic conversational AI functionality without using external AI APIs.
 
 ![alt text](/img/my_chatbot.png)
 
 ## Features
-
 - Clean, responsive web interface
-- Real-time chat with mock AI responses
-- Session-based conversation history
-- Loading indicator with animated typing dots
+- Real-time chat with mock responses instead of AI responses
 - Interactive prompt buttons for quick conversation starters
+- Session-based conversation history
 - Input validation and error handling
-- Mobile-friendly design
+
+## Project Structure
+- `app.py` - main Flask app
+- `chatbot.py` - Chatbot logic
+- `requirements.txt` - Python dependencies for this project
+- `/static/script.js` - Frontend JavaScript
+- `/templates/index.html` - Main HTML template
+- `/static/css/style.css` - CSS stylesheet
 
 ## Tech Stack
-
 **Backend:**
 - Python 3.13.17
-- Flask web framework
-- Flask sessions for state management
+- Flask - web framework and sessions
 
 **Frontend:**
 - HTML5
 - CSS3 with Flexbox/Grid
 - Vanilla JavaScript (ES6+)
 - Google Fonts (Outfit)
-
-## Project Structure
-
-```
-my-chatbot/
-├── app.py                # Main Flask application
-├── chatbot.py            # Chatbot response logic
-├── chat_processing.py    # Input validation
-├── requirements.txt      # Python dependencies
-├── static/
-│   ├── css/
-│   │   └── style.css    # Stylesheet
-│   └── script.js        # Frontend JavaScript
-├── templates/
-│   └── index.html       # Main HTML template
-└── README.md
-```
 
 ## Requirements
 - Python 3.9 or higher (needed for Flask 3.0)
@@ -68,13 +53,13 @@ Please ensure these requirements are met before moving to **Installation and Set
 3. **Activate virtual environment**  
    *Windows Command Prompt:*
    ```bash
-   venv\Scripts\activate
+   .venv\Scripts\activate
    ```
    *MacOS/Linux/Windows Git Bash Terminal:*
    ```bash
-   source venv/bin/activate
+   source .venv/bin/activate
    ```
-   If activation is successful, your terminal prompt will reflect `(venv)`.
+   If activation is successful, your terminal prompt will reflect `(venv)` or `(.venv)`.
 
 4. **Install dependencies**
    ```bash
@@ -109,19 +94,10 @@ Please ensure these requirements are met before moving to **Installation and Set
 - `GET /` - Serves the main chat interface
 - `POST /chat` - Processes chat messages and returns responses
 
-## Response Categories
-The chatbot includes mock responses for:
-- Greetings: Various friendly welcomes
-- Jokes: Collection of clean, professional jokes
-- Fun Facts: Interesting facts including fintech-related content
-- Company Info: Information about Visa Inc.
-- Capabilities: What the chatbot can help with
-
 ## Development Notes
 - Built as a prototype demonstrating full-stack development skills
 - Uses mock responses instead of real AI services
 - Designed for rapid deployment and testing
-- Follows separation of concerns principles
 
 ## Browser Compatibility
 - Modern browsers with ES6+ support
@@ -129,6 +105,3 @@ The chatbot includes mock responses for:
 - Firefox 55+
 - Safari 12+
 - Edge 79+
-
-## License
-This project is for demonstration purposes.
